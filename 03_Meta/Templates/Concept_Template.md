@@ -23,6 +23,9 @@ created: {{date}}
 * [[相關筆記 1]]
 * [[相關筆記 2]]
 
+## 🎯 關聯專案 (Project Linkage)
+* [[專案 Dashboard]] - (說明此概念在該專案中的具體應用)
+
 ## 🗂️ 核心閃卡 (Flashcards)
 * 問題 #card 答案
 * 問題 #card 答案

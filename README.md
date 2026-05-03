@@ -10,10 +10,10 @@
 ---
 
 ## 📌 快速開始
-1.  **存入資料**：將新資訊丟進 `00_Raw/Clippings` 或 `00_Raw/Sources`。
-2.  **開始編譯**：在對話中呼喚 AI 助理處理特定檔案（例如：「編譯此論文並更新我的 Wiki」）。
+1.  **存入資料**：將新資訊丟進 `00_Raw/Inbox`。
+2.  **開始編譯**：在對話中呼喚 AI 助理處理特定檔案（例如：「編譯此論文」）。
 3.  **導航連結**：
-    *   📂 [[00_Raw/Clippings/Post by @karpathy on X|目前待處理資料]]
+    *   📂 [[00_Raw/Inbox/|目前待處理資料 (Inbox)]]
     *   🧠 [[01_Wiki/Main_Index|知識索引 (MOC)]]
     *   🎯 [[02_Outputs/Q&A/History|問答紀錄]]
 
@@ -35,8 +35,7 @@
 mindmap
   root((Jason_PKM))
     00_Raw(捕捉層)
-      Clippings
-      Sources
+      Inbox
       Assets
       Processed
     01_Wiki(編譯層)
@@ -59,10 +58,9 @@ mindmap
 
 ```text
 Jason_PKM/
-├── 00_Raw/               # 捕捉層：未處理素材
-│   ├── Clippings/        # 網頁剪輯、素材入口 (Inbox)
-│   ├── Sources/          # 原始文件、電子書、論文原文
-│   ├── Assets/           # 原始素材附件 (圖片、PDF 等)
+├── 00_Raw/               # 捕捉層：唯一進貨入口
+│   ├── Inbox/            # 所有素材入口 (網頁剪輯、原始文件、專案匯出)
+│   ├── Assets/           # 原始素材附件 (圖片等)
 │   └── Processed/        # 已編譯完成的原始素材歸檔
 ├── 01_Wiki/              # 編譯層：結構化知識
 │   ├── Summaries/        # 針對單一素材的高級摘要
@@ -128,11 +126,13 @@ Jason_PKM/
 ## 🔄 3. 核心工作流 (Standard Operating Procedure)
 
 ### 第一步：捕捉 (Capture)
-*   將所有素材存入 `00_Raw/Clippings`。原則：不求整理，只求完整。
+*   將所有素材存入 `00_Raw/Inbox`。原則：不求整理，只求完整。
 
-### 第二步：編譯、可視化與歸檔 (Compile, Visualize & Archive)
-*   指令：「幫我編譯 [檔案名]，並更新我的 Wiki。」
-*   AI 執行：編譯知識 -> 建立圖表 -> **將原始檔移入 `00_Raw/Processed/`**。
+### 第二步：編譯、連動與歸檔 (Compile, Link & Archive)
+*   指令：「幫我編譯 [檔案名]。」
+*   AI 執行：
+    *   **知識類**：編譯 Wiki -> 檢查專案連動 -> 歸檔至 `00_Raw/Processed/`。
+    *   **專案類**：更新 Dashboard -> 提取 Actions -> 歸檔至 `Projects/Assets/`。
 
 ### 第三步：內化、回饋與驗證 (Internalization & Feedback)
 *   **Jason 回饋**：在 Wiki 筆記的「增補區」手動加入心得，這能讓 AI 下次編譯時更懂您的思考偏好。

@@ -1,46 +1,29 @@
-# Obsidian System Files
+# Jason_PKM_Architecture .gitignore
+
+# 1. 排除所有個人內容 (Exclude all personal content)
+00_Raw/Inbox/*
+00_Raw/Processed/*
+00_Raw/Assets/*
+01_Wiki/Summaries/*
+01_Wiki/Concepts/*
+02_Outputs/Projects/*
+02_Outputs/Learning_Tasks/*
+02_Outputs/Q&A/*
+02_Outputs/Visuals/*
+04_Archive/*
+
+# 2. 排除個人導航地圖 (Exclude personal navigation map)
+01_Wiki/Main_Index.md
+
+# 3. 保留資料夾結構 (Keep directory structure via .gitkeep)
+!**/ .gitkeep
+
+# 4. 保留系統元數據與指令 (Keep system metadata and instructions)
+!03_Meta/**
+!README.md
+!01_Wiki/Main_Index_Template.md
+
+# 5. 排除 Obsidian 系統設定 (Exclude Obsidian settings)
 .obsidian/
 .trash/
-
-# Mac System Files
 .DS_Store
-
-# Personal Knowledge Content (EXCLUDE)
-00_Raw/Clippings/*
-!00_Raw/Clippings/.gitkeep
-00_Raw/Processed/*
-!00_Raw/Processed/.gitkeep
-00_Raw/Sources/*
-!00_Raw/Sources/.gitkeep
-00_Raw/Assets/*
-!00_Raw/Assets/.gitkeep
-
-01_Wiki/Summaries/*
-!01_Wiki/Summaries/.gitkeep
-01_Wiki/Concepts/*
-!01_Wiki/Concepts/.gitkeep
-
-02_Outputs/Learning_Tasks/Active/*
-!02_Outputs/Learning_Tasks/Active/.gitkeep
-02_Outputs/Learning_Tasks/Completed/*
-!02_Outputs/Learning_Tasks/Completed/.gitkeep
-02_Outputs/Learning_Tasks/Reviewing/*
-!02_Outputs/Learning_Tasks/Reviewing/.gitkeep
-02_Outputs/Projects/*
-!02_Outputs/Projects/.gitkeep
-02_Outputs/Q&A/*
-!02_Outputs/Q&A/.gitkeep
-02_Outputs/Visuals/*
-!02_Outputs/Visuals/.gitkeep
-
-03_Meta/Health_Checks/*
-!03_Meta/Health_Checks/.gitkeep
-
-04_Archive/*
-!04_Archive/.gitkeep
-
-# Keep the Bones
-!README.md
-!03_Meta/Prompts/
-!03_Meta/Templates/
-!01_Wiki/Main_Index.md

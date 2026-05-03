@@ -3,8 +3,10 @@
 當你看到這個指令時，請遵循以下規範來處理資料：
 
 ## 1. 處理流程 (Standard Workflow)
-1.  **讀取**：完整閱讀 `00_Raw` 中的素材。
-2.  **摘要**：在 `01_Wiki/Summaries` 生成格式化摘要。
+*   **讀取路徑**：`00_Raw/Inbox/`。
+*   **輸出位置**：
+    *   **知識筆記**：`01_Wiki/Summaries/` 與 `01_Wiki/Concepts/`。
+    *   **專案更新**：`02_Outputs/Projects/[專案名]/`。
 3.  **萃取**：更新或建立 `01_Wiki/Concepts` 筆記，確保至少有 3 個雙向連結。
 4.  **練習**：在 `02_Outputs/Learning_Tasks/Active/` 同步建立一份測驗題。
 5.  **閃卡**：在筆記末尾生成 3-5 張 Flashcards (格式：問題 #card 答案)。

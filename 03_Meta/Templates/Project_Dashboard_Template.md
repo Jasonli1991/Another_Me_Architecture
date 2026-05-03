@@ -36,4 +36,16 @@ started: {{date}}
 *   [外部連結](URL)
 
 ---
+## 🧠 相關知識捕捉 (Auto-Linked Knowledge)
+> [!NOTE] 系統提示
+> 此區塊會自動顯示與此專案相關的最新知識（基於標籤或雙向連結）。
+
+```dataview
+LIST FROM [[#]] AND #Concepts 
+WHERE file.name != this.file.name
+SORT file.mtime DESC
+LIMIT 5
+```
+
+---
 *專案啟動於 {{date}}*
