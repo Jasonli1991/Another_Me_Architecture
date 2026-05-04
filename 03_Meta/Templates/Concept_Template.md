@@ -1,5 +1,5 @@
 ---
-title: "[概念名稱]"
+title: "YYYYMMDD-[概念名稱]"
 tags: #Concepts
 created: {{date}}
 ---

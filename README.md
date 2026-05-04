@@ -33,7 +33,7 @@
 
 ```mermaid
 mindmap
-  root((Jason_PKM))
+  root((Another_Jason))
     00_Raw(捕捉層)
       Inbox
       Assets
@@ -57,7 +57,7 @@ mindmap
 ### 📂 詳細目錄地圖 (Directory Tree)
 
 ```text
-Jason_PKM/
+Another_Jason/
 ├── 00_Raw/               # 捕捉層：唯一進貨入口
 │   ├── Inbox/            # 所有素材入口 (網頁剪輯、原始文件、專案匯出)
 │   ├── Assets/           # 原始素材附件 (圖片等)

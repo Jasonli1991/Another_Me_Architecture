@@ -1,5 +1,5 @@
 ---
-title: "[檔案名稱]"
+title: "YYYYMMDD-Summary-[檔案名稱]"
 source: "[[原始文件]]"
 tags: #Summaries
 created: {{date}}
