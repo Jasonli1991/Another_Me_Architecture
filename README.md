@@ -1,6 +1,6 @@
-# 🚀 Jason 的 AI 知識庫：系統首頁
+# 🚀 Jason 的個人 AI 知識庫系統
 
-歡迎來到 Jason 的個人知識管理系統。
+歡迎來到 Another_Me 個人知識管理系統 PKM。
 
 本知識庫結合了三大核心體系：
 *   **Andrej Karpathy (技術實現)**：利用 LLM 作為「知識編譯員」，實現 **Raw to Wiki** 的自動化轉化。
@@ -13,9 +13,9 @@
 1.  **存入資料**：將新資訊丟進 `00_Raw/Inbox`。
 2.  **開始編譯**：在對話中呼喚 AI 助理處理特定檔案（例如：「編譯此論文」）。
 3.  **導航連結**：
-    *   📂 [[00_Raw/Inbox/|目前待處理資料 (Inbox)]]
-    *   🧠 [[01_Wiki/Main_Index|知識索引 (MOC)]]
-    *   🎯 [[02_Outputs/Q&A/History|問答紀錄]]
+    * [[00_Raw/Inbox/|目前待處理資料 (Inbox)]]
+    * [[01_Wiki/Main_Index|知識索引 (MOC)]]
+    * [[02_Outputs/Q&A/History|問答紀錄]]
 
 ---
 
@@ -29,7 +29,7 @@
 
 ---
 
-## 🏗️ 1. 知識庫架構 (Architecture)
+## 1. 知識庫架構 (Architecture)
 
 ```mermaid
 mindmap
@@ -54,7 +54,7 @@ mindmap
     04_Archive(封存層)
 ```
 
-### 📂 詳細目錄地圖 (Directory Tree)
+### 詳細目錄地圖 (Directory Tree)
 
 ```text
 Another_Jason/
@@ -80,7 +80,7 @@ Another_Jason/
 
 ---
 
-## 🤖 2. AI 助理指令 (AI Instructions)
+## 2. AI 助理指令 (AI Instructions)
 
 **當 AI 進入本知識庫時，必須遵循以下「Token 優化與清理指令」：**
 
@@ -110,7 +110,7 @@ Another_Jason/
 
 ---
 
-## 🤖 AI 報到規範 (AI Onboarding)
+## AI 報到規範 (AI Onboarding)
 
 **不論你是何種模型（GPT, Claude, Gemini 等），在開始協助 Jason 之前，必須執行以下動作：**
 
@@ -123,7 +123,7 @@ Another_Jason/
 
 ---
 
-## 🔄 3. 核心工作流 (Standard Operating Procedure)
+## 3. 核心工作流 (Standard Operating Procedure)
 
 ### 第一步：捕捉 (Capture)
 *   將所有素材存入 `00_Raw/Inbox`。原則：不求整理，只求完整。
@@ -148,7 +148,7 @@ Another_Jason/
 
 ---
 
-## 🚀 4. 系統進化與優化 (System Optimization)
+## 4. 系統進化與優化 (System Optimization)
 
 1.  **規則動態更新**：若發現 AI 生成不符合需求，優先修正 `03_Meta/Prompts` 或本手冊。
 2.  **知識斷層與半衰期分析**：
