@@ -55,12 +55,14 @@
 1. 判斷此 Concept 與哪些進行中的 Project 有直接關聯（參考 `02_Outputs/Projects/` 現有 Dashboard）。
 2. 在 Concept 的 `## 🎯 關聯專案` 區塊填入 `[[ProjectDashboard]] - (具體說明此概念在該專案的應用方式)`。
 3. 若與任何現有專案均無關，填入 `(暫無對應進行中專案)` 而非留空。
+4. **時間差提醒**：若此 Concept 已連回某個 Dashboard（Rule A 完成），但該 Dashboard 的 `## 🧠 相關 Wiki 概念` 尚未列入此 Concept，AI 須主動告知 Jason：「建議下次更新 [專案名] Dashboard 時執行 Rule B 補齊反向連結。」
 
 ### Rule B：專案 → 知識（更新 Project Dashboard 時必執行）
 知識是主體，任務是衍生，掃描順序為「Concepts → Tasks」：
 1. **掃描知識層**：搜尋 `01_Wiki/Concepts/` 與 `01_Wiki/Summaries/`，找出 tags 與本專案技術棧、功能模組相符的條目，填入 `## 🧠 相關 Wiki 概念` 區塊（含一行應用說明）。
-2. **衍生任務層**：對每個已連結的 Concept，若 `02_Outputs/Learning_Tasks/Active/` 中存在對應的衍生 Task（命名規律：`YYYYMMDD-Task-[ConceptTitle].md`），一併列入 `## 🎓 相關學習任務` 區塊。
-3. 兩個區塊若暫無內容，標註 `(暫無)` 而非刪除標題。
+2. **補齊反向連結**：同時檢查已存在的 Concepts 中，`## 🎯 關聯專案` 已連回本 Dashboard 但尚未列入 `## 🧠 相關 Wiki 概念` 的條目，一併補入（消除時間差造成的單向連結）。
+3. **衍生任務層**：對每個已連結的 Concept，若 `02_Outputs/Learning_Tasks/Active/` 中存在對應的衍生 Task（命名規律：`YYYYMMDD-Task-[ConceptTitle].md`），一併列入 `## 🎓 相關學習任務` 區塊。
+4. 兩個區塊若暫無內容，標註 `(暫無)` 而非刪除標題。
 
 ---
-*最後更新：2026-05-06 (新增 Rule A & B 雙向連結強制規則)*
+*最後更新：2026-05-06 (補充時間差提醒機制與 Rule B 反向補齊邏輯)*

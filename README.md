@@ -164,7 +164,13 @@ Another_Jason/
 
 **Rule B 掃描邏輯（知識先，任務後）：**
 1. 掃描 `01_Wiki/Concepts/` 與 `01_Wiki/Summaries/` 的 tags，找出與專案技術棧相符的條目
-2. 對已連結的 Concept，若 `Learning_Tasks/Active/` 有對應衍生 Task，一併列入
+2. 補齊已透過 Rule A 連回本 Dashboard 但尚未列入的 Concept（消除時間差）
+3. 對已連結的 Concept，若 `Learning_Tasks/Active/` 有對應衍生 Task，一併列入
+
+> [!NOTE] 時間差說明
+> 編譯新知識時，Concept 會立刻連回 Dashboard（Rule A），但 Dashboard 不會自動更新。
+> AI 會在編譯後提醒你「建議下次更新 [專案] Dashboard 時執行 Rule B 補齊」。
+> 下次說「更新 [專案名] Dashboard」時，Rule B 會一次補齊所有新增的 Concept。
 
 ---
 
