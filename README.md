@@ -181,6 +181,13 @@ Another_Jason/
 
 若 Notion 專案頁面出現新版號（v1、v2…），且 `02_Outputs/Projects/` 中尚無對應資料夾，AI 建立新版本 Dashboard，並在 `Resources` 區塊自動連回前一版（例如 `[[KA2KA_v0_Dashboard]]`）。
 
+### 完成後的檔案處理
+
+> [!IMPORTANT] Notion 同步檔不進 Processed
+> Notion 匯出的 .md 是**同步媒介，不是原始知識素材**。
+> 處理完成後直接從 `Inbox` **刪除**，不移入 `00_Raw/Processed/`。
+> `00_Raw/Processed/` 僅保留有學習價值的原始文章、白皮書等素材。
+
 ---
 
 ## 5. 雙向連結規則 (Bidirectional Linking Rules)
