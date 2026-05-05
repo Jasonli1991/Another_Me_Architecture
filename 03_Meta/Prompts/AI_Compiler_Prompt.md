@@ -34,8 +34,17 @@
 *   **Mermaid**：主題顏色使用預設，但結構必須簡潔（Node 數量控制在 10 個內）。
 *   **YAML 標籤**：統一使用層級標籤，如 `#Knowledge/Category`。
 
-## 3. 系統連動
-*   處理完畢後，主動詢問用戶是否需要更新 `Main_Index` 或進行對話練習。
+## 3. 必備產出包 (Mandatory Output Pack)
+**每次編譯請求必須「同時」產出以下三者，缺一不可：**
+1.  **Wiki Entry**：(Summary 或 Concept) 負責「記錄」。
+2.  **Learning Task**：負責「轉化」。**嚴禁漏掉！**
+3.  **Index Update**：主動更新 `Main_Index.md`。
+
+## 4. 嚴格自我查檢 (Self-Checklist)
+在完成回覆前，AI 必須在內心（或 Log）確認：
+- [ ] 是否已為新知識建立了 `YYYYMMDD-Task-[Title].md`？
+- [ ] 任務內容是否包含「費曼技巧」或「實戰練習」？
+- [ ] Mermaid 圖表是否能解釋核心邏輯？
 
 ---
-*最後更新：2026-05-03*
+*最後更新：2026-05-05 (加強 Learning Task 強制力)*
