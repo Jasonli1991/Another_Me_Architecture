@@ -3,6 +3,7 @@ title: "練習：[主題名稱]"
 status: 🟢 Active
 topic: [[對應的 Wiki 筆記]]
 type: #LearningTasks
+tags: [flashcards]
 created: {{date}}
 ---
 

@@ -11,22 +11,21 @@
 
 ## 📌 快速開始
 1.  **存入資料**：將新資訊丟進 `00_Raw/Inbox`。
-2. ### 第二步：編譯 (Compile)
-*   呼喚 AI 執行「編譯」指令。
-*   **AI 強制規範**：
+2.  **編譯**：呼喚 AI 執行「編譯」指令。
     *   每生成一個 Wiki 頁面，**必須同步生成一個對應的 Learning Task**。
     *   **無任務，不編譯**。若發現 AI 遺漏任務，請立即予以糾正。
     *   所有筆記必須符合 `03_Meta/Prompts/AI_Compiler_Prompt.md` 的結構。
 3.  **導航連結**：
     * [[00_Raw/Inbox/|目前待處理資料 (Inbox)]]
     * [[01_Wiki/Main_Index|知識索引 (MOC)]]
-    * [[02_Outputs/Q&A/History|問答紀錄]]
+    * [[02_Outputs/Q&A/|問答紀錄]]
 
 ---
 
 ## ⌨️ 快捷指令集 (Quick Commands)
 您可以直接輸入以下簡短指令，AI 會自動執行對應 SOP：
 *   **「編譯 [檔名]」**：啟動 Raw -> Wiki 轉換、生成圖表、**自動建立學習任務**並歸檔原始檔。
+*   **「會議記錄 [檔名] → [專案名]」**：萃取決策加進對應 Dashboard 的 Actions，跨專案則自動拆分。
 *   **「練習 [概念]」**：在 `Learning_Tasks/Active` 建立一份非同步測驗。
 *   **「合成 [A] 與 [B]」**：針對兩個主題進行橫向對比與知識合成。
 *   **「系統健檢」**：分析 Wiki 斷層、邏輯矛盾與過時資訊。
@@ -90,7 +89,8 @@ Another_Jason/
 **當 AI 進入本知識庫時，必須遵循以下「Token 優化與清理指令」：**
 
 1.  **狀態識別與自動清理 (Priority 1)**：
-    *   **處理後搬移**：處理完 `00_Raw` 中的任何檔案後，AI 必須在原始檔案 YAML 加入 `processed: true`，並將該檔案**移動 (Move)** 至 `00_Raw/Processed/`。
+    *   **知識類素材**（文章、白皮書等）：處理完後在 YAML 加入 `processed: true`，並**移動**至 `00_Raw/Processed/`。
+    *   **Notion 同步檔**（專案 .md、會議記錄 .md）：處理完後直接**刪除**，不移入 Processed（詳見第 4 節 Notion 同步 SOP）。
     *   **效益**：確保 AI 每次「掃描新任務」時不會讀取到已處理的舊資料，極大化節省 Token 成本與提升反應速度。
 
 2.  **角色定位**：你是 Jason 的「知識編譯員」與「蘇格拉底式導師」。
@@ -175,7 +175,10 @@ Another_Jason/
 | 專案 .md | Dashboard 已存在 | 「更新 [專案] Dashboard，參考 Inbox/[檔名]，同步進度與里程碑」 |
 | 專案 .md | 新版本（v1, v2…） | 「根據 Inbox/[檔名] 建立 [專案名] 新版本 Dashboard」 |
 | 會議記錄 .md | 有明確專案歸屬 | 「將 Inbox/[檔名] 的決策加進 [專案] Dashboard 的 Actions」 |
-| 會議記錄 .md | 跨專案 / 全體策略 | 「將 Inbox/[檔名] 編譯為策略摘要，存進 Q&A」 |
+| 會議記錄 .md | 跨專案 / 全體策略 | 「將 Inbox/[檔名] 拆分至各相關專案的 Actions，每個專案各取對應部分」 |
+
+> [!NOTE] 會議 Action 格式
+> 所有 Action 檔案請依照 `03_Meta/Templates/Meeting_Action_Template.md` 建立，統一結構。
 
 ### 新版本判斷規則
 
@@ -211,7 +214,7 @@ Another_Jason/
 
 ---
 
-## 5. 系統進化與優化 (System Optimization)
+## 6. 系統進化與優化 (System Optimization)
 
 1.  **規則動態更新**：若發現 AI 生成不符合需求，優先修正 `03_Meta/Prompts` 或本手冊。
 2.  **知識斷層與半衰期分析**：
