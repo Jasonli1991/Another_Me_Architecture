@@ -45,6 +45,22 @@
 - [ ] 是否已為新知識建立了 `YYYYMMDD-Task-[Title].md`？
 - [ ] 任務內容是否包含「費曼技巧」或「實戰練習」？
 - [ ] Mermaid 圖表是否能解釋核心邏輯？
+- [ ] Concept 的 `## 🎯 關聯專案` 是否已填入對應 Project Dashboard 連結？（Rule A）
+- [ ] 若為專案更新，Dashboard 的 `## 🧠 相關 Wiki 概念` 是否已從知識標籤掃描補齊？（Rule B）
+
+## 5. 雙向連結強制規則 (Bidirectional Linking Rules)
+
+### Rule A：學習 → 專案（編譯知識類素材時必執行）
+每次編譯新知識，AI 必須：
+1. 判斷此 Concept 與哪些進行中的 Project 有直接關聯（參考 `02_Outputs/Projects/` 現有 Dashboard）。
+2. 在 Concept 的 `## 🎯 關聯專案` 區塊填入 `[[ProjectDashboard]] - (具體說明此概念在該專案的應用方式)`。
+3. 若與任何現有專案均無關，填入 `(暫無對應進行中專案)` 而非留空。
+
+### Rule B：專案 → 知識（更新 Project Dashboard 時必執行）
+知識是主體，任務是衍生，掃描順序為「Concepts → Tasks」：
+1. **掃描知識層**：搜尋 `01_Wiki/Concepts/` 與 `01_Wiki/Summaries/`，找出 tags 與本專案技術棧、功能模組相符的條目，填入 `## 🧠 相關 Wiki 概念` 區塊（含一行應用說明）。
+2. **衍生任務層**：對每個已連結的 Concept，若 `02_Outputs/Learning_Tasks/Active/` 中存在對應的衍生 Task（命名規律：`YYYYMMDD-Task-[ConceptTitle].md`），一併列入 `## 🎓 相關學習任務` 區塊。
+3. 兩個區塊若暫無內容，標註 `(暫無)` 而非刪除標題。
 
 ---
-*最後更新：2026-05-05 (加強 Learning Task 強制力)*
+*最後更新：2026-05-06 (新增 Rule A & B 雙向連結強制規則)*

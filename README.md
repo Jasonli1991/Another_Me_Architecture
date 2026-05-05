@@ -136,8 +136,8 @@ Another_Jason/
 ### 第二步：編譯、連動與歸檔 (Compile, Link & Archive)
 *   指令：「幫我編譯 [檔案名]。」
 *   AI 執行：
-    *   **知識類**：編譯 Wiki -> 檢查專案連動 -> 歸檔至 `00_Raw/Processed/`。
-    *   **專案類**：更新 Dashboard -> 提取 Actions -> 歸檔至 `Projects/Assets/`。
+    *   **知識類**：編譯 Wiki → 填寫 `## 🎯 關聯專案`（Rule A）→ 歸檔至 `00_Raw/Processed/`。
+    *   **專案類**：更新 Dashboard → 從 Wiki 標籤掃描相關 Concepts 填入 `## 🧠 相關 Wiki 概念`，再衍生填入 `## 🎓 相關學習任務`（Rule B）→ 歸檔至 `Projects/Assets/`。
 
 ### 第三步：內化、回饋與驗證 (Internalization & Feedback)
 *   **Jason 回饋**：在 Wiki 筆記的「增補區」手動加入心得，這能讓 AI 下次編譯時更懂您的思考偏好。
@@ -153,7 +153,22 @@ Another_Jason/
 
 ---
 
-## 4. 系統進化與優化 (System Optimization)
+## 4. 雙向連結規則 (Bidirectional Linking Rules)
+
+系統的核心連結邏輯，確保「工作專案」與「學習知識」互相掛鉤，詳細規範見 `03_Meta/Prompts/AI_Compiler_Prompt.md`。
+
+| 方向 | 觸發時機 | 填寫位置 | 規則 |
+|------|----------|----------|------|
+| 學習 → 專案 | 編譯新知識時 | Concept 的 `## 🎯 關聯專案` | Rule A |
+| 專案 → 知識 | 更新 Dashboard 時 | Dashboard 的 `## 🧠 相關 Wiki 概念` + `## 🎓 相關學習任務` | Rule B |
+
+**Rule B 掃描邏輯（知識先，任務後）：**
+1. 掃描 `01_Wiki/Concepts/` 與 `01_Wiki/Summaries/` 的 tags，找出與專案技術棧相符的條目
+2. 對已連結的 Concept，若 `Learning_Tasks/Active/` 有對應衍生 Task，一併列入
+
+---
+
+## 5. 系統進化與優化 (System Optimization)
 
 1.  **規則動態更新**：若發現 AI 生成不符合需求，優先修正 `03_Meta/Prompts` 或本手冊。
 2.  **知識斷層與半衰期分析**：
@@ -166,4 +181,4 @@ Another_Jason/
 > 「知識庫不是用來存檔的，是用來對話的。AI 負責編譯，我負責實踐。」
 
 ---
-*最後更新：2026-05-03*
+*最後更新：2026-05-06*

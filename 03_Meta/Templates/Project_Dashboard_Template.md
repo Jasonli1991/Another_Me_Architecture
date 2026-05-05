@@ -36,16 +36,18 @@ started: {{date}}
 *   [外部連結](URL)
 
 ---
-## 🧠 相關知識捕捉 (Auto-Linked Knowledge)
-> [!NOTE] 系統提示
-> 此區塊會自動顯示與此專案相關的最新知識（基於標籤或雙向連結）。
 
-```dataview
-LIST FROM [[#]] AND #Concepts 
-WHERE file.name != this.file.name
-SORT file.mtime DESC
-LIMIT 5
-```
+## 🎓 相關學習任務 (Learning Tasks)
+> [!NOTE] AI 填寫規範
+> 建立或更新此 Dashboard 時，AI 必須主動填入與本專案直接相關的 Learning Task 連結。
+
+*   [[../../Learning_Tasks/Active/YYYYMMDD-Task-[主題]|任務名稱]] — (說明此任務與本專案的關係)
+
+## 🧠 相關 Wiki 概念 (Linked Concepts)
+> [!NOTE] AI 填寫規範
+> 列出本專案實際應用到的 Concept，形成從專案到知識的正向連結。
+
+*   [[../../01_Wiki/Concepts/YYYYMMDD-[概念]|概念名稱]] — (說明此概念在本專案中的具體應用)
 
 ---
 *專案啟動於 {{date}}*
