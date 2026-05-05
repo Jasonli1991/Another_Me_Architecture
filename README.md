@@ -153,7 +153,37 @@ Another_Jason/
 
 ---
 
-## 4. 雙向連結規則 (Bidirectional Linking Rules)
+## 4. Notion 同步 SOP (Notion Sync)
+
+> **開源說明**：以下 SOP 以本團隊（Dash-U）的 Notion 專案維護方式為範本。不同團隊的專案結構、版本命名規範、會議記錄格式可能不同，請依實際狀況自行客製化調整。
+
+> 無 Notion API，以手動匯出 Markdown 為觸發點，由 Jason 自行決定同步時機。
+
+### 第一步：你做（篩選 + 放檔）
+
+從 Notion export 資料夾中挑出要處理的檔案：
+
+*   **`專案/` 資料夾**：只取各專案的**頂層 .md**，略過子資料夾的 CSV。
+*   **`會議記錄/` 資料夾**：略過小於 500 bytes 的空殼檔，只取有實質內容的。
+
+選出後放進 `00_Raw/Inbox/`，建議手動去掉 Notion UUID 後綴（例如將 `KA2KA MVP demo 34115bfc....md` 改為 `KA2KA MVP demo.md`）。
+
+### 第二步：AI 執行（依情境下指令）
+
+| 檔案類型 | 情境 | 下給 AI 的指令 |
+|---------|------|--------------|
+| 專案 .md | Dashboard 已存在 | 「更新 [專案] Dashboard，參考 Inbox/[檔名]，同步進度與里程碑」 |
+| 專案 .md | 新版本（v1, v2…） | 「根據 Inbox/[檔名] 建立 [專案名] 新版本 Dashboard」 |
+| 會議記錄 .md | 有明確專案歸屬 | 「將 Inbox/[檔名] 的決策加進 [專案] Dashboard 的 Actions」 |
+| 會議記錄 .md | 跨專案 / 全體策略 | 「將 Inbox/[檔名] 編譯為策略摘要，存進 Q&A」 |
+
+### 新版本判斷規則
+
+若 Notion 專案頁面出現新版號（v1、v2…），且 `02_Outputs/Projects/` 中尚無對應資料夾，AI 建立新版本 Dashboard，並在 `Resources` 區塊自動連回前一版（例如 `[[KA2KA_v0_Dashboard]]`）。
+
+---
+
+## 5. 雙向連結規則 (Bidirectional Linking Rules)
 
 系統的核心連結邏輯，確保「工作專案」與「學習知識」互相掛鉤，詳細規範見 `03_Meta/Prompts/AI_Compiler_Prompt.md`。
 
