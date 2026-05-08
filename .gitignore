@@ -19,8 +19,8 @@
 !**/ .gitkeep
 
 # 4. 保留系統元數據與指令 (Keep system metadata and instructions)
-03_Meta/Health_Checks/*
 !03_Meta/**
+03_Meta/Health_Checks/*
 !README.md
 !01_Wiki/Main_Index_Template.md
 
