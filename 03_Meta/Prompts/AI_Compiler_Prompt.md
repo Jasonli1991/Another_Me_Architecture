@@ -34,7 +34,7 @@
 *   **強調**：關鍵詞使用 **粗體**，避免使用下劃線。
 *   **Callouts (Obsidian)**：重要警示使用 `> [!IMPORTANT]`，延伸思考使用 `> [!NOTE]`。
 *   **Mermaid**：主題顏色使用預設，但結構必須簡潔（Node 數量控制在 10 個內）。
-*   **YAML 標籤**：統一使用層級標籤，如 `#Knowledge/Category`。
+*   **YAML 標籤**：參照 `03_Meta/TAGS.md`，使用扁平結構（如 `#Summaries #AI #RAG`），遵循 CamelCase 與連字符規則。
 
 ## 5. 必備產出包 (Mandatory Output Pack)
 **每次編譯請求必須「同時」產出以下三者，缺一不可：**
@@ -42,11 +42,26 @@
 2.  **Learning Task**：負責「轉化」。**嚴禁漏掉！**
 3.  **Index Update**：主動更新 `Main_Index.md`。
 
+## 5.5 標籤規範 (Tagging Convention)
+
+編譯新知識時，**必須**為 Summaries 和 Concepts 添加適當的標籤。詳細規範見 `03_Meta/TAGS.md`。
+
+**快速參考：**
+- **第一層（必填）**：`#Summaries` 或 `#Concepts`
+- **第二層（可多選）**：`#AI`, `#Cloud`, `#Frontend`, `#Productivity` 等知識領域
+- **第三層（可多選）**：`#RAG`, `#Dify`, `#LLMOps`, `#Container` 等具體工具/主題
+
+**規則：**
+- 使用 CamelCase：`#RAG`, `#LLMOps`, `#Dify`（非 `#rag`, `#llmops`, `#dify`）
+- 多詞用連字符：`#AI-Agent`, `#AI-Engineering`（非 `#AI/Agent`, `#AI Agent`）
+- 2-5 個標籤最佳，超過 6 個表示信號異常
+
 ## 6. 嚴格自我查檢 (Self-Checklist)
 在完成回覆前，AI 必須在內心（或 Log）確認：
 - [ ] 是否已為新知識建立了 `YYYYMMDD-Task-[Title].md`？
 - [ ] 任務內容是否包含「費曼技巧」或「實戰練習」？
 - [ ] Mermaid 圖表是否能解釋核心邏輯？
+- [ ] **Frontmatter 的 tags 是否已根據 03_Meta/TAGS.md 填入（第一層必填，2-5 個標籤）？**
 - [ ] Concept 的 `## 🎯 關聯專案` 是否已填入對應 Project Dashboard 連結？（Rule A）
 - [ ] 若為專案更新，Dashboard 的 `## 🧠 相關 Wiki 概念` 是否已從知識標籤掃描補齊？（Rule B）
 
@@ -91,4 +106,4 @@
 4. 兩個區塊若暫無內容，標註 `(暫無)` 而非刪除標題。
 
 ---
-*最後更新：2026-05-06*
+*最後更新：2026-05-10*

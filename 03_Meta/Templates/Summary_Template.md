@@ -1,9 +1,16 @@
 ---
 title: "YYYYMMDD-Summary-[檔案名稱]"
 source: "[[原始文件]]"
-tags: #Summaries
+tags: #Summaries #[領域標籤] #[主題標籤]
 created: {{date}}
 ---
+
+> [!NOTE] 標籤填寫說明
+> 按照 `03_Meta/TAGS.md` 規範：
+> - 第一層（必填）：#Summaries
+> - 第二層（可多選）：#AI, #Cloud, #Frontend, #Productivity 等
+> - 第三層（可多選）：#RAG, #Dify, #LLMOps, #BaaS 等
+> 目標：2-5 個標籤，遵循 CamelCase 與連字符規則
 
 # 📄 摘要：[檔案名稱]
 

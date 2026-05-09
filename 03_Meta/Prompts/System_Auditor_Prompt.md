@@ -28,6 +28,15 @@
 *   掃描 `02_Outputs/Learning_Tasks/Active/` 中有 Jason 回答內容的任務，確認是否需要移至 `Completed/`。
 *   確認所有任務格式符合 `03_Meta/Templates/Learning_Task_Template.md`（包含費曼技巧、實戰應用、閃卡三段）。
 
+### 1-7 標籤一致性審查
+*   **格式檢查**：掃描 `01_Wiki/Concepts/` 與 `01_Wiki/Summaries/`，檢查是否有違反命名規則的標籤：
+    - ❌ 單數形式 `#Summary`（應為 `#Summaries`）
+    - ❌ 層級符號 `#AI/Engineering` 或 `#Engineering/Workflow`（應為 `#AI-Engineering` 等）
+    - ❌ 小寫標籤如 `#rag`, `#dify`（應為 CamelCase）
+*   **過度標籤檢查**：找出超過 6 個標籤的檔案，評估是否需要簡化。
+*   **孤立標籤檢查**：找出只出現 1 次的標籤，考慮是否應合併或移除。
+*   **標籤雲更新**：掃描所有標籤，更新 `Main_Index.md` 的 `## 🏷️ 標籤雲` 區塊（僅納入出現 2 次以上的標籤）。
+
 ---
 
 ## 2. 索引維護 (Index Maintenance)
@@ -50,4 +59,4 @@
 *   **內容必須包含**：概況統計、發現的問題清單、優化建議、Rule A/B 缺口清單。
 
 ---
-*最後更新：2026-05-06*
+*最後更新：2026-05-10*
