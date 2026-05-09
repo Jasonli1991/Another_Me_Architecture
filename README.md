@@ -1,4 +1,4 @@
-# 🚀 Jason 的個人 AI 知識庫系統
+# 🚀 個人 AI 知識庫系統
 
 > [!NOTE] 
 > **最新更新 (2026-05-10)**: 強化了 `03_Meta` 管理層，包含新增標籤規範 `TAGS.md`、優化編譯與稽核 Prompts，並同步更新了筆記模板。建議舊用戶執行 `git pull` 獲取最新規範。詳見 [CHANGELOG.md](./CHANGELOG.md)。
