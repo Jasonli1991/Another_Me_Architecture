@@ -21,6 +21,8 @@
 # 4. 保留系統元數據與指令 (Keep system metadata and instructions)
 !03_Meta/**
 03_Meta/Health_Checks/*
+# Notion 同步狀態資料含公司頁面標題，勿公開；通用工具 notion_sync_diff.py 仍保留
+03_Meta/Sync_State/*.json
 !README.md
 !01_Wiki/Main_Index_Template.md
 

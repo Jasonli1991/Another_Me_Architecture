@@ -1,7 +1,7 @@
 # 🚀 個人 AI 知識庫系統
 
 > [!NOTE] 
-> **最新更新 (2026-05-10)**: 強化了 `03_Meta` 管理層，包含新增標籤規範 `TAGS.md`、優化編譯與稽核 Prompts，並同步更新了筆記模板。建議舊用戶執行 `git pull` 獲取最新規範。詳見 [CHANGELOG.md](./CHANGELOG.md)。
+> **最新更新 (2026-06-23, v1.2.0)**: 新增 **MIT 授權**（見 [LICENSE](./LICENSE)）與 **Notion 增量同步 SOP**（差異偵測工具，詳見第 4 節）。前次更新 (2026-05-10) 強化 `03_Meta` 管理層、新增標籤規範 `TAGS.md`、優化編譯與稽核 Prompts。詳見 [CHANGELOG.md](./CHANGELOG.md)。
 
 歡迎來到 Another_Me 個人知識管理系統 PKM。
 
@@ -196,6 +196,36 @@ Another_Jason/
 > 處理完成後直接從 `Inbox` **刪除**，不移入 `00_Raw/Processed/`。
 > `00_Raw/Processed/` 僅保留有學習價值的原始文章、白皮書等素材。
 
+### 增量同步（差異偵測，避免每次全讀）
+
+> 整個公司的 Notion 會「整批」重複倒進 Inbox。為避免每次都重讀 500+ 檔，
+> 用 `03_Meta/Sync_State/notion_sync_diff.py` 只挑出**新增＋變更**的檔案來讀。
+
+**原理**：Notion 檔名帶 32 位 hex 的穩定 **UUID**（同一頁面跨匯出不變），
+搭配內容 **SHA-256** 偵測變動。比對鍵為 `UUID|副檔名|是否_all`（避免資料庫
+主視圖 csv 與 `_all.csv` 同 UUID 碰撞）；無 UUID 的內嵌圖／媒體改用內容 hash。
+
+**狀態檔**：`03_Meta/Sync_State/notion_manifest.json`（baseline 快照，每次同步後更新）。
+
+**下一次同步流程**：
+```bash
+cd 03_Meta/Sync_State
+IB="../../00_Raw/Inbox"
+
+# 1) 先看差異（對照上次 baseline）——只列出 NEW / CHANGED / DELETED
+python3 notion_sync_diff.py diff --inbox "$IB" --manifest notion_manifest.json --report last_diff.json
+
+# 2) 只讀 last_diff.json 的 read_paths_abs（NEW+CHANGED），其餘跳過
+#    依本節 SOP 更新對應 Dashboard / 拆會議 / 編譯知識
+
+# 3) 處理完成後，更新 baseline（保留已回填的 synced_to）
+python3 notion_sync_diff.py snapshot --inbox "$IB" --manifest notion_manifest.json
+```
+
+> [!TIP] 指令給 AI
+> 直接說「**Notion 增量同步**」：AI 會先跑 diff，只讀差異檔，處理後自動 snapshot 更新狀態。
+> 首次或想全量重檢時才說「**Notion 完整同步**」。
+
 ---
 
 ## 5. 雙向連結規則 (Bidirectional Linking Rules)
@@ -228,8 +258,13 @@ Another_Jason/
 
 ---
 
-## 💡 學習格言
-> 「知識庫不是用來存檔的，是用來對話的。AI 負責編譯，我負責實踐。」
+## 📜 授權 (License)
+
+本知識庫**框架**（README、`03_Meta/` 下的 Prompts／Templates／TAGS，以及 `03_Meta/Sync_State/notion_sync_diff.py` 工具）以 **MIT License** 釋出，歡迎自由使用、修改與散布，詳見 [LICENSE](./LICENSE)。
+
+> [!NOTE] 授權範圍
+> 個人／團隊的實際筆記內容（`00_Raw`、`01_Wiki`、`02_Outputs`、`04_Archive`，以及 `03_Meta` 下的同步狀態資料與健檢日誌）已由 `.gitignore` 排除，**不在授權與公開範圍內**。
 
 ---
-*最後更新：2026-05-10 (v1.1.0)*
+
+*最後更新：2026-06-23 (v1.2.0：新增 MIT 授權與 Notion 增量同步 SOP)*
