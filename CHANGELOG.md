@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2026-06-23
+
+### Added
+- `LICENSE`: 採用 **MIT License**，授權範圍為知識庫框架（README、`03_Meta/` 的 Prompts／Templates／TAGS 及 `notion_sync_diff.py` 工具）。
+- `README.md`: 新增「📜 授權 (License)」段落。
+- Notion 同步 SOP 新增「增量同步（差異偵測）」小節，並新增 `03_Meta/Sync_State/notion_sync_diff.py`：以 Notion 穩定 UUID + 內容 SHA-256 偵測 NEW／CHANGED／DELETED，下次整批匯出只讀差異檔，免全庫重讀。
+
+### Changed
+- `README.md`: 更新頂部最新更新橫幅與頁尾至 v1.2.0。
+- `.gitignore`: 忽略 `03_Meta/Sync_State/*.json`（含公司 Notion 頁面標題的同步狀態資料，不對外公開）。
+
 ## [1.1.0] - 2026-05-10
 
 ### Added
