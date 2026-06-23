@@ -162,7 +162,38 @@ Another_Jason/
 
 > **開源說明**：以下 SOP 以本團隊（Dash-U）的 Notion 專案維護方式為範本。不同團隊的專案結構、版本命名規範、會議記錄格式可能不同，請依實際狀況自行客製化調整。
 
-> 無 Notion API，以手動匯出 Markdown 為觸發點，由 Jason 自行決定同步時機。
+> 無 Notion API，以手動匯出 Markdown 為觸發點，由使用者自行決定同步時機。
+
+### 🚀 首次匯入 (First-Time Setup) — 新成員上手
+
+> 第一次匯入時尚無差異基準，請用「**完整同步**」；建立 baseline 後，往後都改用「**增量同步**」（見本節末）。
+
+1. **取得框架**：`git clone https://github.com/Jasonli1991/Another_Me_Architecture.git`（clone 下來只有框架，無任何個人／公司內容）。
+2. **從 Notion 匯出**：目標空間 `···` → **Export** → 格式選 **Markdown & CSV** → **Include subpages: On** → 解壓後把**全部檔案**丟進 `00_Raw/Inbox/`（扁平丟入即可，UUID 後綴無需手動清）。
+3. **用具備本機檔案存取能力的 LLM agent 開啟 vault**（如 Claude Code／Cursor／Cline；純網頁版聊天無法讀本機檔，不適用）。
+4. **對 LLM 下指令**：簡短觸發詞 →「**Notion 完整同步**」。若該 LLM 不熟悉本庫，貼下方完整指令：
+
+```text
+請執行「Notion 完整同步」（首次匯入）：
+1. 先讀 README.md 第 4 節 SOP 與 03_Meta/ 下的 Prompts、Templates、TAGS.md。
+2. 完整讀過 00_Raw/Inbox/ 所有檔案：.md 全讀、CSV 逐列、圖片用視覺檢視、docx/pdf 抽文字。
+3. 依模板寫入知識庫：
+   • 專案頁 → 02_Outputs/Projects/<專案>/ 建立 Dashboard（里程碑／進度／Actions）
+   • 會議記錄 → 拆進對應專案 Actions（依 Meeting_Action_Template）
+   • 知識／學術分享／團隊規範 → 編譯為 01_Wiki/Concepts 或 Summaries，
+     並在 02_Outputs/Learning_Tasks/Active 同步建測驗（無任務不編譯），填雙向連結 Rule A/B
+   • 媒體 → 編目並建議歸檔位置
+4. 🔒 機敏遮蔽：所有帳密、API key、DB 連線字串、客戶個資一律遮蔽，嚴禁寫入。
+5. 重建 01_Wiki/Main_Index.md 導航索引。
+6. 建立差異基準：
+   cd 03_Meta/Sync_State && python3 notion_sync_diff.py snapshot --inbox ../../00_Raw/Inbox --manifest notion_manifest.json
+7. 確認無誤後清空 00_Raw/Inbox（Notion 為原始來源，內容已寫入知識庫）。
+完成後回報：建立了哪些 Dashboard／概念、遮蔽了什麼、刪除清單。
+```
+
+> [!IMPORTANT] 給新成員
+> - `03_Meta/Sync_State/notion_manifest.json`（差異基準）**每台機器各自獨立**，已被 `.gitignore` 排除、不進公開 repo；clone 後第一次「完整同步」才會在你本機產生。
+> - `00_Raw`／`01_Wiki`／`02_Outputs`／`04_Archive` 皆為 `.gitignore` 排除的**本機個人資料**，不會上傳；公開 repo 只含框架。
 
 ### 第一步：你做（篩選 + 放檔）
 
