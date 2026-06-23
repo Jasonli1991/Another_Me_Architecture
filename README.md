@@ -262,9 +262,6 @@ python3 notion_sync_diff.py snapshot --inbox "$IB" --manifest notion_manifest.js
 
 本知識庫**框架**（README、`03_Meta/` 下的 Prompts／Templates／TAGS，以及 `03_Meta/Sync_State/notion_sync_diff.py` 工具）以 **MIT License** 釋出，歡迎自由使用、修改與散布，詳見 [LICENSE](./LICENSE)。
 
-> [!NOTE] 授權範圍
-> 個人／團隊的實際筆記內容（`00_Raw`、`01_Wiki`、`02_Outputs`、`04_Archive`，以及 `03_Meta` 下的同步狀態資料與健檢日誌）已由 `.gitignore` 排除，**不在授權與公開範圍內**。
-
 ---
 
 *最後更新：2026-06-23 (v1.2.0：新增 MIT 授權與 Notion 增量同步 SOP)*
